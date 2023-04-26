@@ -1,0 +1,33 @@
+.block{
+    width: 150px;
+    height: 150px;
+    background-color: aquamarine;
+    box-sizing: border-box;
+    padding:50px;
+    float: left;
+    margin: 10px;
+    
+}
+.block2{
+    width: 150px;
+    height: 150px;
+    background-color: aquamarine;
+    box-sizing: border-box;
+    padding:50px;
+    float: left;
+    margin: 10px;
+    
+}
+body :nth-child(4){
+    clear: left;
+}
+body :nth-child(3){
+    clear: left;
+    float: right;
+}
+body :nth-child(5){
+    clear: ri;
+    
+}
+
+

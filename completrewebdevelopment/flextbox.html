@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex box</title>
+    <style>
+        .container{
+            border: 2px solid rebeccapurple;
+            padding: 4px;
+            margin: 30px;
+            width: 300px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            
+           
+
+            
+            
+            
+          
+        
+            
+          
+        }
+        #div1{
+            background-color: blueviolet;
+            /* width: 60px;
+            height: 60px; */
+            order: 1;
+            margin-top: auto;
+        
+           
+          
+       
+        }
+        #div2{
+            background-color: rgb(202, 43, 226);
+            /* width: 60px;
+            height: 60px; */
+        }
+        #div3{
+            background-color: rgb(226, 43, 165);
+            /* width: 60px;
+            height: 60px; */
+            width: 60px;
+            flex-shrink: 2;
+           
+        }
+        #div4{
+            background-color: rgb(202, 28, 28);
+            /* width: 60px;
+            height: 60px; */
+           order: -1;
+           cursor: grab;
+        }
+        div{
+           margin: 8px;
+           padding: 8px;
+        }
+        #div5{
+            background-color: rgb(21, 217, 122);
+            /* width: 60px;
+            height: 60px; */
+            cursor:ew-resize
+            order: -1;
+        }
+        #div6{
+            background-color: rgb(63, 28, 202);
+            /* width: 60px;
+            height: 60px; */
+            order: -90;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div id="div1">one</div>
+      <div id="div2">two</div>
+      <div id="div3">three</div>
+      <div id="div4">four</div>
+      <!-- <div id="div5">five</div>
+      <div id="div6">six</div> -->
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        body{
+            height:6000px;
+            
+        }
+        .div1{
+            border: 2px dashed rebeccapurple;
+            width: 50%;
+            margin: auto;
+            margin-top: 60px;
+            
+            
+           
+        }
+        .div2{
+            border: 2px solid red;
+            margin: 4rem;
+            position: relative;
+        }
+        p{
+            background-color: antiquewhite;
+            width: 50px;
+            height: 50px;
+            padding: 1rem;
+        }
+        #div3{
+           position: absolute;
+           top: 0;
+           right: 0;
+        }
+        #div4{
+            position: fixed;
+        }
+        #div6{
+            z-index: 1;
+        }
+       
+    </style>
+</head>
+<body>
+<section>
+    <div class="div1">
+        <div class="div2">
+           <div id="div3"><p>box1</p></div>
+           <div id="div4"><p>box2</p></div>
+           <div id="div5"><p>box3</p></div>
+           <div id="div6"><P>box4</P></div>
+        </div>
+    </div>
+</section>    
+</body>
+</html>

@@ -1,12 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>clock</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+    }
+    .container{
+      border: 8px solid rgb(200, 231, 224);
+      margin-top: 50%;
+      padding: 20px;
+      text-align: center;
+      background-color: antiquewhite;
+
+    }
+    .sp1,.sp3,.sp5{
+      font-size: 40px;
+      margin-right: 4px;
+    }
+    input{
+      margin-top: 10px;
+      margin-right: 4px;
+      width: 100px;
+      padding: 4px;
+      font-weight: bolder;
+      border: 0px;
+    }
+    #stop{
+      background-color: rgb(159, 114, 203);
+    }
+    #start{
+      background-color: rgb(114, 141, 203);
+    }
+    #reset{
+      background-color: rgb(114, 179, 203);
+    }
+
+  </style>
 </head>
 <body>
-    hlooo
+  <div class="container">
+    <span class="sp sp1" id="hr">00</span>
+    <span class="sp sp2"><sub>Hr</sub></span>
+    <span class="sp sp3" id="mn">00</span>
+    <span class="sp sp4"><sub>Mn</sub></span>
+    <span class="sp sp5" id="sc">00</span>
+    <span class="sp sp6"><sub>Sc</sub></span>
+    <span class="sp sp7"></span>
+    <br>
+    <input id="start" type="button" value="Start">
+    <input id="stop" type="button" value="Stop">
+    <input id="reset" type="button" value="Reset">
+  </div>
+<script>
+  var count=0,id_return;
+  var minut=0,hour=0;
+  var start = document.getElementById("start");
+  var stop = document.getElementById("stop");
+  var reset = document.getElementById("reset");
+  var sc = document.getElementById("sc");
+  var mn = document.getElementById("mn");
+  var hr = document.getElementById("hr");
+
+
+  start.addEventListener("click",startfn);
+  stop.addEventListener("click",stopfn);
+  reset.addEventListener("click",resetfn);
+
+ 
+
+
+
+ function startfn(){
+   count = count+1;
+   if(count == 60){
+    count = 0;
+    minut = minut +1;
+   }
+   if(minut==60){
+    minut=0;
+    hour = hour + 1;
+   }
+   sc.innerHTML = count;
+   mn.innerHTML = minut;
+   hr.innerHTML = hour;
+   id_return=setTimeout("startfn()",1000);
+  }
+
+  function stopfn(){
+   clearInterval(id_return);
+  }
+
+  function resetfn(){
+    count = 0;
+    minut = 0;
+    hour = 0;
+    sc.innerHTML = "00";
+    mn.innerHTML = "00";
+    hr.innerHTML = "00";
+  }
+
+  
+</script>
 </body>
 </html>

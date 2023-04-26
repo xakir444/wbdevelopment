@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopwatch</title>
+    
+    
+    <style>
+        #container{
+            background-color: rgb(187, 221, 221);
+            outline: 8px solid black;
+            margin: 200px;
+            height: 200px;
+            width: 300px;
+            box-sizing: border-box;
+            text-align: center;
+            
+        }
+        #time{
+            padding-top: 6em;
+        }
+        #btm-container{
+            margin: 6px;
+        }
+        span{
+            margin-right: 8px;
+        }
+        .digit{
+            font-size: 30px;
+        }
+        .btn{
+            width: 80px;
+            padding: 6px;
+            border: 0px;
+            font-weight: bold;
+        }
+        .btn:nth-child(2){
+            background-color: rgb(55, 218, 218);
+            margin: 8px ;
+        }
+      
+        .btn:nth-child(1){
+            background-color: rgb(185, 141, 219);
+           
+        }
+        .btn:nth-child(3){
+            background-color: rgb(214, 157, 199);
+           
+        }
+    </style>
+</head>
+<body>
+  <div id="container">
+    <div id="time">
+        <span class="digit" id="hr">00</span>
+        <span class="text"><sub>Hr</sub></span>
+        <span class="digit" id="min">00</span>
+        <span class="text"><sub>Mn</sub></span>
+        <span class="digit" id="sec">00</span>
+        <span class="text"><sub>Sec</sub></span>
+        <span class="digit" id="count">00</span>
+    </div>
+    <div id="btm-container">
+        <button class="btn" onclick="start()">Start</button>
+        <button class="btn" onclick="stop()">Stop</button>
+        <button class="btn" onclick="reset()">Reset</button>
+    </div>
+   
+  </div>
+  <script>
+    let check = false;
+    let count = 0;
+    let sec = 0;
+    let min = 0;
+    let hr = 0;
+
+   function start(){
+    check = true;
+    settime();
+
+   }
+   function stop(){
+    check = false;
+
+   }
+   function reset(){
+    document.getElementById("count").innerHTML = "00";
+    document.getElementById("sec").innerHTML = "00";
+    document.getElementById("min").innerHTML = "00";
+    document.getElementById("hr").innerHTML = "00";
+    check =false;
+   }
+   function settime(){
+    if(check == true){
+
+        count = count + 1;
+        document.getElementById("count").innerHTML = count;
+        setTimeout("settime()",10);
+    }if(count == 99){
+        count =0;
+        sec = sec +1;
+        document.getElementById("sec").innerHTML = sec;
+
+    }
+    if(sec == 60){
+        sec=0;
+        min = min + 1;
+        document.getElementById("min").innerHTML = min;
+
+    }
+    if(min == 60){
+        min=0;
+        hr = hr + 1;
+        document.getElementById("hr").innerHTML = hr;
+    }
+
+   }
+
+
+  </script>
+</body>
+</html>

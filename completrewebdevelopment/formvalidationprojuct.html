@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation through js projuct</title>
+
+<style>
+    body{
+        background-color: antiquewhite;
+    }
+    #form-container{
+        background-color: white;
+        text-align: center;
+        margin: 2px 150px 2px 150px;
+        padding-top: 40px;
+        padding-bottom: 80px;
+
+    }
+    input{
+        margin: 8px;
+        padding: 6px;
+    }
+    
+    input[type="submit"]{
+        width: 180px;
+       
+        background-color: aquamarine;
+        border: 0px;
+        font-weight: bold;
+        outline: 4px solid saddlebrown;
+    }
+    .error{
+        margin: 0px;
+        color: red;
+        
+    }
+   
+   
+</style>
+
+</head>
+<body>
+    <div id="form-container">
+        <h2>Login</h2>
+        <form action="" autocomplete="on" onsubmit="return validateFrom()">
+           <input type="text" placeholder="user name" id="username"><br>
+           <p class="error" id="usererror"></p>
+         
+           <input type="password" placeholder="password" id="password"><br>
+           <p class="error" id="passerror"></p>
+           <input type="submit">
+        </form>
+    </div>
+
+  <script>
+    let username = document.getElementById("username");
+    let password = document.getElementById("password");
+    function validateFrom(){
+         if(username.value == "" && username.value !=){
+            document.getElementById("usererror").innerHTML = "user name is empty";
+            return false;
+         }
+         else if(username.value.length < 3){
+            document.getElementById("usererror").innerHTML = "name should need at lest 3 charcter";
+            return false;
+         }
+         else if(password.value == ""){
+            document.getElementById("passerror").innerHTML = "Enter your password"; 
+            return false;
+         }
+         return true;
+    }
+
+   
+
+  </script>
+
+</body>
+</html>

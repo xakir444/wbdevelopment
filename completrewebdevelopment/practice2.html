@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .container{
+        border: 2px solid red;
+        width: 300px;
+        background-color: rgb(193, 189, 183);
+        margin: 50px auto;
+        display: grid;
+        grid-template-columns: repeat(2,150px);
+        grid-template-rows: repeat(2,150px);
+      }
+      .item1{background-color: aqua;
+      grid-column: 1/span 2;
+      grid-row: 1/span 2;
+      align-self: start;
+      z-index: 1;
+    }
+    .item2{background-color: aqua;
+      grid-column: 1/span 2;
+      grid-row: 1/span 2;
+      align-self: center;
+      justify-self: center;
+      z-index: 4;
+    }
+    .item3{background-color: aqua;
+      grid-column: 1/span 2;
+      grid-row: 1/span 2;
+      align-self: end;
+      justify-self: end;
+    }
+      .item2{background-color: rgb(15, 44, 170);}
+      .item3{background-color: rgb(26, 192, 23);}
+      .item{
+        max-width: 150px;
+        border: 4px double rebeccapurple;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, libero?</div>
+        <div class="item item2">2 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, ab reprehenderit dolorem autem cum rem eius molestiae ipsam vero temporibus.</div>
+        <div class="item item3">3 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit eligendi sequi modi, amet libero illo iusto, soluta quibusdam vero explicabo ullam quia facere? Fugiat itaque, nisi totam delectus vel laboriosam.</div>
+    </div>
+</body>
+</html>
